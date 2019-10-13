@@ -1,0 +1,15 @@
+{
+  "name": "lesson3",
+  "version": "0.0.0",
+  "description": "前后台简单交互",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "",
+    "express": "^4.9.5",
+    "cookie-parser": ""
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+}

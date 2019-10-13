@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>前后台简单交互</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <h3>前后台简单交互</h3>
+    <form method="post">
+        账号 :
+        <input type="text" id="name" />
+        <br/><br/>
+        密码 :
+        <input type="password" id="pwd" />
+        <br/><br/>
+        <input type="button" value="提交" id="submit">
+    </form>
+</body>
+
+<script>
+    //获取后台反馈数据并提示信息
+    var afterLogin=function(data,status){
+        if (status=='success'){
+            alert(data) ;
+        }else {
+            alert('登录失败')
+        }
+    }
+
+    //前提点击提交
+    $("#submit").click(function(){
+        var name    =   $("#name").val() ;
+        var pwd     =   $("#pwd").val() ;
+        if(name=="" || pwd==""){
+            alert("帐号和密码不能为空")
+        }else{
+            $.post('http://localhost:3000/login',{
+                    name:name ,
+                    pwd:pwd
+                },afterLogin
+            );
+        }
+    });
+</script>
+</html>
